@@ -307,13 +307,6 @@ Durante o desenvolvimento, cada etapa foi verificada com um script em Node escri
 
 **Limitação conhecida: `localhost:3000/a` não recebe `https://` automático.** A interface completa `https://` quando o texto não começa com um esquema como `algo:`. Em `localhost:3000/a` ou `exemplo.com:8080/x`, o trecho antes dos dois-pontos parece um esquema, então o texto vai como está e a API recusa com "A URL deve começar com http:// ou https://.". Basta digitar o protocolo. Tratar "dois-pontos seguido de número" como porta resolveria esse caso, mas faria `javascript:1` virar `https://javascript:1`, que a API aceitaria. Preferi manter a regra simples e previsível.
 
-## Uso de IA
-
-Usei duas ferramentas de IA, com papéis diferentes.
-
-- **Claude Code**, no VS Code, para implementar. Todas as conversas estão em `docs/ia/`, uma por etapa.
-- **Claude**, no chat, como revisor. Usei para planejar a ordem das etapas, escrever parte dos prompts enviados ao Claude Code e revisar os planos e o código antes de aprovar. Conversa completa: (https://claude.ai/share/6765aa00-7c69-488b-95b9-a9d9bdd9b980)
-
 ### Como trabalhei
 
 - Regras fixas no `CLAUDE.md`: uma funcionalidade por vez, plano antes de implementar, sem commits automáticos, sem dependências ou `npx` sem pedir, código em português.
